@@ -4,8 +4,11 @@ import time
 import MFRC522 #RFID scanner
 import requests
 import json
-import datetime
+
 import time
+import urllib2
+import datetime
+
 
 
 
@@ -53,27 +56,43 @@ def distanz():
     distanz = (TimeElapsed * 34300) / 2
  
     return distanz
- 
+
+
 if __name__ == '__main__':
+
     try:
         while True:
             abstand = distanz()
-            
-            millis = int(round(time.time() * 1000))
-            payload = {'measurement': abstand,'date': millis}
-            
-            r = requests.post(url, data=payload)
            
-            print(r.text)
+           
+            millis = int(round(time.time() * 1000))
+            print (millis)
             
+    
+            payload = {'measurement': abstand,'date': millis}
+            req = urllib2.Request(url)
+            req.add_header('Content-Type', 'application/json')
+            response = urllib2.urlopen(req, json.dumps(payload))
+        
+           
+            print('gesendet')
             
+           
             (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
             if status == MIFAREReader.MI_OK:
             # UID holen
  
                 (status,uid) = MIFAREReader.MFRC522_Anticoll()
-                payload2 ={'rfid' :uid}
-                r = requests.post(url, data=payload)
+               
+            
+                a=str(uid[0])+' '+str(uid[1])+' '+str(uid[2])+' '+str(uid[3])+' '+str(uid[4])
+                print(a)
+                payload2 ={'rfid' :a}
+               
+                req = urllib2.Request(url)
+                req.add_header('Content-Type', 'application/json')
+                response = urllib2.urlopen(req, json.dumps(payload2))
+                
            
             
             time.sleep(3)
