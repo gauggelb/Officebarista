@@ -3,8 +3,8 @@ During the Wintersemester 2017/2018 at the Reutlingen University we developed a 
 
 
 
-The idea behind the development is that a coffee order from the workplace is possible. For this, the user has three options:
-Either he uses the app developed for this, or he orders via Google Home, which must be centrally located in the office.
+The idea behind the development is to offer a coffee order from the workplace. Therefore, the user has three options:
+Either he uses the developed app, the RFID card, or he orders via Google Home, which must be centrally located in the office.
 Should he order via Google Home, user identification and billing will be done via the language. If he orders via the app, 
 the identification is done via the stored password. In the third case, he can order coffee as usual with his RFID card directly on the device.
 In both cases I can access all the standard coffees of the "Siemens TI909701HC EQ.9 connect s900 coffee machine". The forwarding of the commands takes place via IFTTT.
