@@ -3,15 +3,15 @@ The Hardware for this Project based on a Raspberry Pi Zero W with a MFRC522 RFID
 
 ## Layout from the Hardware settings
 ![Hardware Layout](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Aufbau%20Hardware.png)
-Format: ![Alt Text](url)
+
 
 ##Case Basestation
 ![Basestation Case_1](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Kaffeecase%20rund%201.png)
-Format: ![Alt Text](url)
+
 
 ##Case VL53L0X Time of Flight sensor
 ![ToF Case_1](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Case%20ToF%204.png)
-Format: ![Alt Text](url)
+
 
 
 
