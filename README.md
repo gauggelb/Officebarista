@@ -41,4 +41,4 @@ full or empty. For the secure placement of the technical components, a 3D housin
 
 
 
-![Architecture diagram](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Modell.png)
+![Architecture diagram](https://github.com/gauggelb/Officebarista/blob/Timm/hardware/images/Architektur%20Diagramm.png)
