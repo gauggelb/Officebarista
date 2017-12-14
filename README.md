@@ -28,11 +28,14 @@ full or empty. For the secure placement of the technical components, a 3D housin
 * [Time of Flight (TOF) Sensor Vl53L0X](https://www.amazon.de/gp/product/B06XT1H1L7/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B06XT1H1L7&linkId=a4c61988dde5a204874bb208ab6c2cb5
  "Time of Flight (TOF) Sensor Vl53L0X")
 
-* [Raspberry Pi Zero W] (https://www.amazon.de/gp/product/B06XCYGP27/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B06XCYGP27&linkId=f8232bfc1cb044212710ab896692e510 "Raspberry Pi Zero W")
+* [Raspberry Pi Zero W](https://www.amazon.de/gp/product/B06XCYGP27/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B06XCYGP27&linkId=f8232bfc1cb044212710ab896692e510
+ "Raspberry Pi Zero W")
 
-* [RFID Modul MCFR522] (https://www.amazon.de/gp/product/B00QFDRPZY/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B00QFDRPZY&linkId=2a0ebd829ebf6630c376d83f4d594433 "RFID Modul MCFR522")
+* [RFID Modul MCFR522](https://www.amazon.de/gp/product/B00QFDRPZY/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B00QFDRPZY&linkId=2a0ebd829ebf6630c376d83f4d594433
+ "RFID Modul MCFR522")
 
-*[SMD RGB LED B0157AK0MU] (https://www.amazon.de/gp/product/B0157AK0MU/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B0157AK0MU&linkId=bd003decf6ac0da40e9f52439a2b63d7 "SMD RGB LED B0157AK0MU")
+* [SMD RGB LED B0157AK0MU](https://www.amazon.de/gp/product/B0157AK0MU/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B0157AK0MU&linkId=bd003decf6ac0da40e9f52439a2b63d7
+ "SMD RGB LED B0157AK0MU")
 
 
 
