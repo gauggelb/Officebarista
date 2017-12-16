@@ -18,7 +18,22 @@ Components:
  - Raspberry PI Zero W
  - Jumper Wire 
  - SD-Card with 8GB Space
- - 
+ - MFRC522-RFID Sensor
+ - Vl53l0X Time of Flight Sensor
+ - 3x Screw M1x6
+
+### Installation Raspberry PI
+
+1. Download Raspbian ([Raspbian download](https://www.raspberrypi.org/downloads/ "Download Raspbian"))
+2.  Flash the Raspbian to SD-Card (Note: bevor removing the SD-Card please make Step 3)
+3. Connecting the Raspberry PI to Wifi ([Raspberry PI Wifi Setup](https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html "Raspberry PI Wifi Setup"))
+4. Update & Upgrade the Raspbian
+```
+sudo apt-get update && sudo apt-get dist-upgrade -y
+```
+5.  [Installing Vl53l0X API](https://github.com/cassou/VL53L0X_rasp "Installing VL53l0X")
+6. [Installing MFRC-522-RFID Reader](https://tutorials-raspberrypi.de/raspberry-pi-rfid-rc522-tueroeffner-nfc "Installing MFRC-522-RFID Reader")
+
 
 ### Case Basestation
 ![Basestation Case_1](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Kaffeecase%20rund%201.png)
