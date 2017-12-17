@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "9b035a229f4114b7f81ccf856249489388ec669b7477a6bbd2a26c414c90d22a8415125520cc62715ed018da907d16c490eede221242c91a1b3fce515972dc83b20a146197c0afbe129d2bf0967398e3f23cbc50219a52cfb373ebb0460349721e240bff6ffb4f6111e55dd5eb1339a61ecf8e4aa7dfb247311404389269ece474933367ef64dee7de1a6653a39d5039680dae646e88f4d157b563299ee6e4b4c099691be4c951a78a7f9d12e4242b177084f8a0b7fdac7f6787831b3334a802c7dc24b9bf93f258de155b40130a985cb63d281053102389e5d961ad6bc51e861ed70334d026b9dae898c00662f85885ed44d0b96f4b18f6623ce88ac55b3328",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "service": "users",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://hackathonUser:hackathonPW@hackathonwim3-shard-00-00-h01zl.mongodb.net:27017,hackathonwim3-shard-00-01-h01zl.mongodb.net:27017,hackathonwim3-shard-00-02-h01zl.mongodb.net:27017/test?ssl=true&replicaSet=HackathonWIM3-shard-0&authSource=admin"
+}
