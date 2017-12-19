@@ -1,0 +1,43 @@
+<ion-content class="home-content" padding>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h3>Übersicht
+	  <img class="image" height="40px" src="../imgs/logo.jpg"/></h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="spacer" style="width: 300px; height: 100px;"></div>
+	<h3><p style="color:white; margin-left:2.5%;">Herr/Frau {{userName}}</p></h3>
+	<ion-list>
+		<ion-item>	
+			<ion-label full (click)="kaffeeBestellen()">Kaffee  bestellen</ion-label>
+		</ion-item>	
+		<div class="spacer" style="width: 300px; height: 1px;"></div>
+		<ion-item>	
+			<ion-label full (click)="rechnungAnsehen()">Rechnung ansehen</ion-label>
+		</ion-item>	
+		<div class="spacer" style="width: 300px; height: 1px;"></div>
+		<ion-item>	
+			<ion-label full (click)="favoritVerwalten()">Favorit verwalten</ion-label>
+		</ion-item>	
+		<div *ngIf="admin" class="spacer" style="width: 300px; height: 1px;"></div>
+		<ion-item *ngIf="admin">	
+			<ion-label full (click)="lagerVerwalten()">Lager  verwalten</ion-label>
+		</ion-item>	
+		<div *ngIf="admin"  class="spacer" style="width: 300px; height: 1px;"></div>
+		<ion-item *ngIf="admin">	
+			<ion-label full (click)="userVerwalten()">Users  verwalten</ion-label>
+		</ion-item>		
+		<div class="spacer" style="width: 300px; height: 1px;"></div>
+		<ion-item>	
+			<ion-label full (click)="nfc()">NFC</ion-label>
+		</ion-item>	
+		<div class="spacer" style="width: 300px; height: 50px;"></div>
+		<ion-item class="logout">	
+			<ion-label full (click)="logout()" class="logout">Logout</ion-label>
+		</ion-item>	
+			
+	</ion-list>
+</ion-content>
+

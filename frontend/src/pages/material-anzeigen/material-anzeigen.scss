@@ -1,0 +1,22 @@
+page-material-anzeigen {
+	.label-md[stacked] {
+		font-size: 16px;
+	}
+	
+	.item-md.item-block .item-inner {
+		padding-right: 8px;
+		border-bottom: 1px solid #dedede !important;
+	}
+	
+	.show{
+		display:block;
+	}
+	
+	.hide{
+		display:none;
+	}
+	.image{
+		display:inline-block;
+		margin-left:75%;
+	}
+}

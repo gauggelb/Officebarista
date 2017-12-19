@@ -1,0 +1,117 @@
+th {
+	background-color: #444444;
+	color: white;
+	line-height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	
+}
+.item-md {
+	font-size: 20px;
+	color: grey;
+}
+
+.submit-btn{
+	width:95% !important;
+	margin-left: 2.5% !important; 
+	background: #0f1f29;
+	background-image: -webkit-linear-gradient(top, #0f1f29, #3a9c7b);
+	background-image: -moz-linear-gradient(top, #0f1f29, #3a9c7b);
+	background-image: -ms-linear-gradient(top, #0f1f29, #3a9c7b);
+	background-image: -o-linear-gradient(top, #0f1f29, #3a9c7b);
+	background-image: linear-gradient(to bottom, #0f1f29, #3a9c7b);
+	-webkit-border-radius: 12;
+	-moz-border-radius: 12;
+	border-radius: 12px;
+	color: #ffffff;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+}
+
+
+
+.abrechnung {
+	width: 95% !important;
+	margin-left: 2.5% !important;
+	text-align: center;
+}
+
+.abrechnung td {
+	background-color: #e6e6e6;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.abrechnung {
+	border-collapse: collapse;
+}
+
+.abrechnung td {
+	border: 1px solid #444444;
+}
+
+.abrechnung tr:first-child th {
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.abrechnung tr:nth-child(2) td {
+	border-top: 0;
+}
+
+.abrechnung tr:last-child td {
+	border-bottom: 0;
+}
+
+.abrechnung tr td:first-child,
+.abrechnung tr th:first-child {
+	border-left: 0;
+}
+
+.abrechnung tr td:last-child,
+.abrechnung tr th:last-child {
+	border-right: 0;
+}
+
+.bigButton {
+	width: 100%;
+	line-height: 100px !important;
+}
+
+.marginClass {
+	margin-left: 3px;
+}
+
+.marginRight {
+	margin-Right: 5px;
+}
+
+.select {
+	width: 100%;
+	height: 70px;
+	font-size: 18px;
+}
+
+.next {
+	margin-left: 60px;
+}
+
+.previous, .next {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+.widthProperty {
+	width: 90%;
+}
+
+ion-item{
+	width:95% !important;
+	margin-left: 2.5% !important;
+}
+
+.list-md .item-block .item-inner {
+    border-bottom: 0;
+}

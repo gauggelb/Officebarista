@@ -1,0 +1,9 @@
+page-nfc {
+	.item-label-stacked ion-label, .item-label-floating ion-label{
+		height: 20px !important;
+	}
+	.image{
+		display:inline-block;
+		margin-left:75%;
+	}
+}

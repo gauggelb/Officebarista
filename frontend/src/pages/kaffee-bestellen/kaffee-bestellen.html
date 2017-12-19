@@ -1,0 +1,52 @@
+<ion-content title="Kaffee bestellen"  style="background-color:#83A09E;">
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h3>Kaffee bestellen
+	  <img class="image" height="40px" src="../imgs/logo.jpg"/></h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br><br><br><br><br><p></p><br><br>
+    <form (submit)="createOrder()">
+		<ion-item *ngIf="notBlocked">
+		 <ion-label>Kaffeesorte</ion-label>
+		<ion-select (ionChange) = "setFill()" [(ngModel)]="createProperties.description" name="descrption "> 
+				<ion-option value="Capuccino">Capuccino</ion-option>
+				<ion-option value="Espresso">Espresso</ion-option>
+				<ion-option value="Espresso Macchiato">Espresso Macchiato</ion-option>
+				<ion-option value="Kaffee">Kaffee</ion-option>
+				<ion-option value="Latte Macchiato">Latte Macchiato</ion-option>
+				<ion-option value="Milchkaffee">Milchkaffee</ion-option>
+		</ion-select>
+		</ion-item>
+		
+		 <ion-item *ngIf="notBlocked">
+		  <ion-label>Bohnenmenge</ion-label>
+		  <ion-select [(ngModel)]="createProperties.beanAmount" name="beanAmount" >
+			<ion-option value="ConsumerProducts.CoffeeMaker.EnumType.BeanAmount.Mild">Mild (2g)</ion-option>
+			<ion-option value="ConsumerProducts.CoffeeMaker.EnumType.BeanAmount.Normal">Normal(5g)</ion-option>
+			<ion-option value="ConsumerProducts.CoffeeMaker.EnumType.BeanAmount.Strong">Stark (10g)</ion-option>
+			<ion-option value="ConsumerProducts.CoffeeMaker.EnumType.BeanAmount.VeryStrong">Sehr stark (13g)</ion-option>
+			<ion-option value="ConsumerProducts.CoffeeMaker.EnumType.BeanAmount.DoubleShot">Double shot (23g)</ion-option>
+			<ion-option value="ConsumerProducts.CoffeeMaker.EnumType.BeanAmount.DoubleShotPlus">Double shot plus (25g)</ion-option>
+		</ion-select>
+		</ion-item>
+		 
+		<ion-item *ngIf="notBlocked">
+		  <ion-label>Füllmenge</ion-label>
+		  <ion-select  [(ngModel)]="createProperties.fillAmount" name="fillAmount" >
+			<ion-option *ngFor="let fill of listToLoad" [value]="fill">{{fill}} Ml</ion-option>
+		  </ion-select>	  
+		</ion-item>
+		
+		<ion-item *ngIf="rechnung">
+			<ion-label class="red">Bitte Rechnung zahlen!</ion-label>
+		</ion-item>
+		
+	
+      <div class="spacer" style="width: 300px; height: 26px;"></div>
+	   <button *ngIf="notBlocked" ion-button block type="submit" class="submit-btn">Bestellen</button>
+    </form>
+    
+  </ion-content>

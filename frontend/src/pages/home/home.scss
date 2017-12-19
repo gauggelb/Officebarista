@@ -1,0 +1,28 @@
+page-home {
+	.page{
+		align-content: middle !important;
+	}
+	.image{
+		display:inline-block;
+		margin-left:75%;
+	}
+  .home-content, .feld {
+		background: #83A09E;
+	}
+	
+	ion-item {
+		height: 80px;
+		background-color: #b5c7c5 !important;
+		font-weight: bold !important;
+		border-radius: 1px !important;
+		font-size: 20px !important;
+		text-align: center !important;
+		
+	}
+	
+	.logout{
+		background-color: white !important;
+	}
+	
+	
+}

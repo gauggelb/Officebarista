@@ -1,0 +1,27 @@
+<ion-content class="login-content">
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h3>Login
+	  <img class="image" height="40px" src="../imgs/logo.jpg"/></h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br><br><br><br><br>
+
+  <form (submit)="doLogin()">
+  <br><br>
+	<ion-list>
+		<ion-item > 
+		  <ion-label stacked>Email</ion-label>
+		  <ion-input [(ngModel)]="loginData.email" name="email" type="text" placeholder="Email"></ion-input>
+		</ion-item>
+		<ion-item>
+		  <ion-label stacked>Passwort</ion-label>
+		  <ion-input [(ngModel)]="loginData.password" name="password" type="password" placeholder="Passwort"></ion-input>
+		</ion-item>
+	</ion-list>
+	<br><br>
+    <button ion-button block type="submit" class="submit-btn">Login</button>
+  </form>
+</ion-content>

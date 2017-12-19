@@ -1,0 +1,21 @@
+<ion-content class="page" title="Lagerverwaltung" style="background-color:#83A09E;" >
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h3>Alle Materialien
+	  <img class="image" height="40px" src="../imgs/logo.jpg"/></h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br><br><p></p><br><br><br><br>
+	<ion-list>
+		<ion-item class="artikel">Artikel</ion-item>
+		<div class="spacer" style="width: 300px; height: 5px;"></div>
+		<ion-item *ngFor = "let material of materials.data">	
+			<ion-label full (click) = "showMaterial(material._id)">{{material.description}}</ion-label>
+		</ion-item>	
+	<ion-item>
+		<ion-label  (click) = "newMaterial()">Neues Material anlegen</ion-label>
+	</ion-item>
+	</ion-list>
+</ion-content>

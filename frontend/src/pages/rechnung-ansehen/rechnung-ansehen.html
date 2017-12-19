@@ -1,0 +1,35 @@
+<ion-content title="Rechnung ansehen" id="page4" style="background-color:#83A09E;">
+  <ion-content title="Kaffee bestellen"  style="background-color:#83A09E;">
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h3>Rechnungung Ansehen
+	    <img class="image" height="40px" src="../imgs/logo.jpg"/></h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<br><br><p></p><br><br>
+    <div class="spacer" style="width: 300px; height: 29px;"></div>
+    <div id="rechnungAnsehen-button-bar1" class="button-bar"></div>
+    <h4 id="rechnungAnsehen-heading16" style="color:#000000;"></h4>
+
+    <table width="80%" class="abrechnung">
+      <tbody>
+        <tr>
+		  <th>Date</th>
+          <th>Kaffeesorte</th>
+		  <th>Preis</th>
+        </tr>
+        
+        <tr *ngFor = "let order of orders.data">
+		  <td>{{order.date | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+          <td>{{order.description}}</td>
+		  <td>{{order.price}} €</td>
+        </tr>
+      </tbody>
+    </table>
+	<div class="spacer" style="width: 300px; height: 29px;"></div>
+	<ion-item  style = "width:95%;margin-left:2.5%;background-color:#e6e6e6;font-weight:bold; font-size:18px !important;">
+		<ion-label stacked>Gesamtpreis: &nbsp;  {{totalPrice}} €</ion-label>
+	</ion-item>
+</ion-content>

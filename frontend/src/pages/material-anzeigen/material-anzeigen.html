@@ -1,0 +1,43 @@
+<ion-content padding>
+<ion-header>
+  <ion-navbar>
+    <ion-title><h3>Material "{{material.description}}"
+		<img class="image" height="40px" src="../imgs/logo.jpg"/>
+	  </h3>
+	  </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<br><br><p></p><br><br>
+<form (submit)="updateMaterial()">
+	<ion-list>
+		<ion-item>
+			<ion-label stacked full >Beschreibung</ion-label>
+			<ion-input type="text" name="description" [(ngModel)]="material.description"></ion-input>
+		</ion-item> 
+		
+		<ion-item>
+			<ion-label stacked full >Verfügbare Menge</ion-label>
+			<ion-input type="text" name="inStock"[(ngModel)] ="material.inStock"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label stacked full >Kritische verfügbare Menge</ion-label>
+			<ion-input type="text" name="criticalStock"[(ngModel)] ="material.criticalStock"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label stacked full >Einkaufspreis</ion-label>
+			<ion-input type="text" name="ekPrice" [(ngModel)]="material.ekPrice"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label stacked full >Verkaufspreis</ion-label>
+			<ion-input type="text" name="vkPrice"[(ngModel)]= "material.vkPrice"></ion-input>
+		</ion-item>
+	</ion-list>
+	
+	<button ion-button type="submit" ng-style="myStyle" name="show" class="submit-btn">Speichern</button>
+	</form>
+</ion-content>
