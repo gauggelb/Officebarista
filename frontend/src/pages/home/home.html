@@ -20,7 +20,9 @@
 		<div class="spacer" style="width: 300px; height: 1px;"></div>
 		<ion-item>	
 			<ion-label full (click)="favoritVerwalten()">Favorit verwalten</ion-label>
-		</ion-item>	
+		</ion-item>
+		<!-- *ngIf means: this item will only be showned if there is a variable in the typescript
+		filed named admin which boolean value is true otherwise it will not be displayed-->
 		<div *ngIf="admin" class="spacer" style="width: 300px; height: 1px;"></div>
 		<ion-item *ngIf="admin">	
 			<ion-label full (click)="lagerVerwalten()">Lager  verwalten</ion-label>
