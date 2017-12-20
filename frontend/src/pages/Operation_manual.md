@@ -1,7 +1,7 @@
 # Login
 
 Every registered user can login by entering email and password. 
-![Screenshot_20171218-225940](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/Screenshot_20171218-225940.png)
+![login](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/Screenshot_20171218-225940.png){:height="50%" width="50%"}
 
 # Order coffee
 
