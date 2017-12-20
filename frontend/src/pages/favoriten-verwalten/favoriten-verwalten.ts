@@ -1,8 +1,5 @@
 /*Is called with the corresponding html file*/
 
-
-
-
 import { Component } from '@angular/core';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { FavoritProvider } from '../../providers/favorit/favorit';
@@ -25,6 +22,8 @@ export class FavoritenVerwaltenPage {
 	orderProperties = {description:'', beanAmount:'', fillAmount:'', price:'2.5', date:Date.now(), buyer:''};
 	data: any;
 	listToLoad :any;
+	
+	/*Depending on the choosen coffee type, the fillamount options have to be changed. Therefore they have to be declared*/
 	espressoList=['35', '40', '45', '50', '55', '60'];
 	espressoMacchiatoList=['50','60','70','80'];
 	coffeeList=['60','80','100','120','140','160','180','200','220','240','260'];
@@ -40,6 +39,7 @@ export class FavoritenVerwaltenPage {
 		this.offeneRechnung();
 	}
 	
+	/*check if the user is blocked or not to adapdt the view*/
 	offeneRechnung(){
 		this.blocked = localStorage.getItem('blocked');
 		if(this.blocked == "true"){
@@ -48,6 +48,8 @@ export class FavoritenVerwaltenPage {
 			this.notBlocked =true;
 		}
 	}
+	/*If the user selected the order case, then the coffee will be ordered and will be saved as new favorit 
+	is not existing (hasFavorite). Otherwise the existing favorit will be updated*/
 	action(){
 		 if(this.bestellen == true){
 				this.orderProperties.description = this.favoritProperties.description;
@@ -61,12 +63,15 @@ export class FavoritenVerwaltenPage {
 			this.createFavorit();
 			}
 	}
+	
+/*The creatFavorit method is called from provider favoritService*/
   createFavorit() {
 		this.favoritProperties.creator = localStorage.getItem('currentId');
 		console.log(this.favoritProperties);
 		this.favoritService.createFavorit(this.favoritProperties);
   }
    
+/*adapt the option to the choosen coffee type*/
      setFill(){
   console.log("Here");
 	if(this.favoritProperties.description == "Capuccino"){
@@ -89,6 +94,7 @@ export class FavoritenVerwaltenPage {
 	}
   }
   
+	/*check if the user already have a favorit*/
   getFavorit(){
 	 this.favoritService.getFavorit()
 	  .subscribe(data => {
@@ -99,11 +105,12 @@ export class FavoritenVerwaltenPage {
 								};
 							});
   }
-  
+  /*Call the service from provider to update favorit*/
   updateFavorit(){
 	 this.favoritService.updateFavorit(this.favoritProperties);
   }
-  
+	
+  /*Call the service from provider to order coffee*/
   bestellenMethod(){
 	this.orderProperties.date = Date.now();
 	this.ordersService.createOrder(this.orderProperties).then((result) => {
