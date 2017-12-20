@@ -27,7 +27,7 @@ The user just have to check the "order" case and press the order button.
 
 ![fav](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/favorit.png)
 
-If the user is blocked, it looks this way
+If the user is blocked, he can still still save his preferences but not order.
 
 ![fav_locked](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/fav_locked.png)
 
