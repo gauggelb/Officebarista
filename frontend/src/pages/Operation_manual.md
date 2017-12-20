@@ -67,6 +67,6 @@ still have a function of readng the NFC-tags (from card or anyother NFC-device).
  ![show_user](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/show_user.png)
 
  
- #Logout
+ # Logout
  Once the user is done with the app he can just log out.
 
