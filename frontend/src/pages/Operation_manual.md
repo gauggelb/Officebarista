@@ -56,7 +56,7 @@ If the user is blocked, he can still still save his preferences but not order.
  ![new_user](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/new_user.png)
 
  
- - Change user
+ - Show/Change user
  
  ![show_user](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/show_user.png)
 
