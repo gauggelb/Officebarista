@@ -24,7 +24,7 @@ Die GUI is the intermediate between the user and the backend.  It allows specifi
                                                                                                             
 # Admin’s view                                                                                                       
                                                                                                             
-![Admin](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/admin.png)                                  
+![admin](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/admin.png)                                  
 
 # App-Views
 Every app-view is a page including three types of files:  html, typescript and css. 
