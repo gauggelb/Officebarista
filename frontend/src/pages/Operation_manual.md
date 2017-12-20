@@ -10,6 +10,10 @@ Once logged in every user can order a coffee by choosing the coffee's type, bean
 
 ![kaffee_bestellen](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/kaffee_bestellen.png)
 
+if the user is locked (see show bill) than there is no possibility to order
+
+![order_locked](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/order_locked.png)
+
 # Show bill
 
 The ordered coffees can then be showned on this tab, which will calculate the total billamount. 
