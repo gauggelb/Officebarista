@@ -1,3 +1,8 @@
+/*Is called with the corresponding html file*/
+
+
+
+
 import { Component } from '@angular/core';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { FavoritProvider } from '../../providers/favorit/favorit';
