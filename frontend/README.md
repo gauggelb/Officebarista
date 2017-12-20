@@ -22,8 +22,8 @@ Die GUI is the intermediate between the user and the backend.  It allows specifi
 
 ![user](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/user.png)                
                                                                                                             
-# Admin’s view                                                                                                       
-                                                                                                            
+# Admin’s view  
+
 ![admin](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/admin.png)                                  
 
 # App-Views
