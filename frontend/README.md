@@ -18,27 +18,26 @@ Die GUI is the intermediate between the user and the backend.  It allows specifi
 -	Add and modify users (including blocking users)
   
   
- # Normal user’s view                                  Admin’s view
-                
+ # Normal user’s view                                  
+
+(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/user.png)                
                                                                                                             
-                                                                                                            
+# Admin’s view                                                                                                       
                                                                                                             
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            
-# App-Views 
+(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/admin.png)                                  
+
+# App-Views
 Every app-view is a page including three types of files:  html, typescript and css. 
  
 The Html document contains the elements (fields, labels, …) and values which will be outputted
 The Typescript document can implement page’s functions, send variables to the html and call provider’s functions 
 The css document is responsible of the style which will be applied to the html
 
+                                      
+(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/pages.png)     
+
 # Providers
 Providers are services, which use http calls within functions in order to transport data from the pages to the backend and from the backend to the pages. 
                                       
-
+(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/providers.png)         
 
