@@ -52,74 +52,74 @@ export class FavoritenVerwaltenPage {
 	is not existing (hasFavorite). Otherwise the existing favorit will be updated*/
 	action(){
 		 if(this.bestellen == true){
-				this.orderProperties.description = this.favoritProperties.description;
-				this.orderProperties.beanAmount = this.favoritProperties.beanAmount;
-				this.orderProperties.fillAmount = this.favoritProperties.fillAmount;
-				this.bestellenMethod();
+			this.orderProperties.description = this.favoritProperties.description;
+			this.orderProperties.beanAmount = this.favoritProperties.beanAmount;
+			this.orderProperties.fillAmount = this.favoritProperties.fillAmount;
+			this.bestellenMethod();
 			}
 		if(this.hasFavorit == true){
 			this.updateFavorit();
 		}else{
 			this.createFavorit();
 			}
-	}
+		}
 	
-/*The creatFavorit method is called from provider favoritService*/
-  createFavorit() {
+	/*The creatFavorit method is called from provider favoritService*/
+	createFavorit() {
 		this.favoritProperties.creator = localStorage.getItem('currentId');
 		console.log(this.favoritProperties);
 		this.favoritService.createFavorit(this.favoritProperties);
-  }
-   
-/*adapt the option to the choosen coffee type*/
-     setFill(){
-  console.log("Here");
-	if(this.favoritProperties.description == "Capuccino"){
-		this.listToLoad = this.capuccinoList;
-	}
-	if(this.favoritProperties.description == "Espresso"){
-		this.listToLoad = this.espressoList;
-	}
-	if(this.favoritProperties.description == "Espresso Macchiato"){
-		this.listToLoad = this.espressoMacchiatoList;
-	}
-	if(this.favoritProperties.description == "Kaffee"){
-		this.listToLoad = this.coffeeList;
-	}
-	if(this.favoritProperties.description == "Latte Macchiato"){
-		this.listToLoad = this.latteMacchiatoList;
-	}
-	if(this.favoritProperties.description == "Milchkaffee"){
-		this.listToLoad = this.caffeeLatteList;
-	}
-  }
-  
+	  }
+
+	/*adapt the option to the choosen coffee type*/
+	     setFill(){
+		if(this.favoritProperties.description == "Capuccino"){
+			this.listToLoad = this.capuccinoList;
+		}
+		if(this.favoritProperties.description == "Espresso"){
+			this.listToLoad = this.espressoList;
+		}
+		if(this.favoritProperties.description == "Espresso Macchiato"){
+			this.listToLoad = this.espressoMacchiatoList;
+		}
+		if(this.favoritProperties.description == "Kaffee"){
+			this.listToLoad = this.coffeeList;
+		}
+		if(this.favoritProperties.description == "Latte Macchiato"){
+			this.listToLoad = this.latteMacchiatoList;
+		}
+		if(this.favoritProperties.description == "Milchkaffee"){
+			this.listToLoad = this.caffeeLatteList;
+		}
+	  }
+
 	/*check if the user already have a favorit*/
-  getFavorit(){
-	 this.favoritService.getFavorit()
-	  .subscribe(data => {
-							if(data.data.length > 0){
-								this.favoritProperties = data.data[0]; 
-								this.hasFavorit = true;
-								console.log(this.favoritProperties);
-								};
-							});
-  }
-  /*Call the service from provider to update favorit*/
-  updateFavorit(){
-	 this.favoritService.updateFavorit(this.favoritProperties);
-  }
+	getFavorit(){
+		 this.favoritService.getFavorit()
+		  .subscribe(data => {
+			if(data.data.length > 0){
+				this.favoritProperties = data.data[0]; 
+				this.hasFavorit = true;
+				console.log(this.favoritProperties);
+				};
+			});
+	}
 	
-  /*Call the service from provider to order coffee*/
-  bestellenMethod(){
-	this.orderProperties.date = Date.now();
-	this.ordersService.createOrder(this.orderProperties).then((result) => {
-    }, (err) => {
-		console.log(err);
-		this.presentToast(err);
-    });
-  }
-  
+	/*Call the service from provider to update favorit*/
+	updateFavorit(){
+		this.favoritService.updateFavorit(this.favoritProperties);
+	  }
+	
+	/*Call the service from provider to order coffee*/
+	bestellenMethod(){
+		this.orderProperties.date = Date.now();
+		this.ordersService.createOrder(this.orderProperties).then((result) => {
+		}, (err) => {
+			console.log(err);
+			this.presentToast(err);
+		});
+	}
+
   
   showLoader(){
     this.loading = this.loadingCtrl.create({
