@@ -20,11 +20,11 @@ Die GUI is the intermediate between the user and the backend.  It allows specifi
   
  # Normal user’s view                                  
 
-(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/user.png)                
+![user](https://github.com/gauggelb/Officebarista/tree/master/frontend/README/user.png)                
                                                                                                             
 # Admin’s view                                                                                                       
                                                                                                             
-(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/admin.png)                                  
+![Admin](https://github.com/gauggelb/Officebarista/tree/master/frontend/README/admin.png)                                  
 
 # App-Views
 Every app-view is a page including three types of files:  html, typescript and css. 
@@ -34,10 +34,10 @@ The Typescript document can implement page’s functions, send variables to the 
 The css document is responsible of the style which will be applied to the html
 
                                       
-(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/pages.png)     
+![pages](https://github.com/gauggelb/Officebarista/tree/master/frontend/README/pages.png)     
 
 # Providers
 Providers are services, which use http calls within functions in order to transport data from the pages to the backend and from the backend to the pages. 
                                       
-(https://github.com/gauggelb/Officebarista/tree/master/frontend/README/providers.png)         
+![providers](https://github.com/gauggelb/Officebarista/tree/master/frontend/README/providers.png)         
 
