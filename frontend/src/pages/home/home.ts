@@ -1,3 +1,5 @@
+/*Is called with the corresponding html file*/
+
 import { Component } from '@angular/core';
 import {  App, MenuController, NavController, NavParams } from 'ionic-angular';
 
