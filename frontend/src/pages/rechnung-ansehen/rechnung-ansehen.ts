@@ -1,3 +1,5 @@
+/*Is called with the corresponding html file*/
+
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { OrdersProvider } from '../../providers/orders/orders';
@@ -24,13 +26,15 @@ export class RechnungAnsehenPage {
     this.getRechnung();
 	
   }
-
+	
+  /*get all the orders of a user through order's service*/	
   getRechnung(){
 	this.orders=this.ordersService.getOrder()
-	  .subscribe(data => {this.orders = data; this.getSum(data.data);});
-	  
-	
+	  .subscribe(data => {this.orders = data; this.getSum(data.data);});	
   }
+	
+	
+  /*calculate the price of all orders*/		
   getSum(orders){
 	for(var i = 0; i < orders.length; i++){
 		this.totalPrice = this.totalPrice + parseFloat(orders[i].price);		
