@@ -1,3 +1,5 @@
+/*Is called with the corresponding html file*/
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController,, LoadingController } from 'ionic-angular';
 import { NFC, Ndef } from '@ionic-native/nfc';
@@ -26,13 +28,14 @@ export class NfcPage {
 		this.cekNFC();console.log("ready");
 	}
 	
+	/*If the nfc-function is unabled on the device then add listener*/
 	cekNFC() {
 		this.nfc.enabled().then(() => {
-			console.log("Enabled");
 			this.addListenNFC();
 		});
 	}
-
+	
+	/*Wait till an event occurs (in our case till a nfc-device is put on the back of the phone) then read the nfc-tag*/
 	addListenNFC() {
 		this.nfc.addTagDiscoveredListener(nfcEvent => this.sesReadNFC(nfcEvent.tag)).subscribe(data => {
 			if (data && data.tag && data.tag.id) {
