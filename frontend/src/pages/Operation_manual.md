@@ -1,12 +1,12 @@
 # Login
 
 Every registered user can login by entering email and password. 
-![Login](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/Screenshot_20171218-225940.png)
+![login](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/Screenshot_20171218-225940.png)
 
 # Order coffee
 
 Once logged in every user can order a coffee by choosing the coffee's type, beanamount and fillamount.
-![Login](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/Screenshot_20171218-230038.png)
+![order](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/Screenshot_20171218-230038.png)
 
 # Show bill
 
