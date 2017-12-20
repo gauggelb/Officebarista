@@ -25,7 +25,9 @@ export class HomePage {
 			  this.role();
 	
   }
-  kaffeeBestellen(){
+	/*The home.html files have button which call those functions. Once called, the function redirect the user to
+	the choosen page*/
+  	kaffeeBestellen(){
 		this.navCtrl.push(KaffeeBestellenPage);
 	}
 
@@ -52,6 +54,7 @@ export class HomePage {
 		}
 	}
 	
+	/*On logout, the loginpage become the rootpage so that there is no access without available datas*/
 	logout(){
 		this.menuCtrl.close();
 		var nav = this.app.getRootNav();
