@@ -10,7 +10,7 @@ export class MaterialProvider {
 
   constructor(public http: Http) {}
   
-   allMaterials() {  
+  	allMaterials() {  
 		var headers = new Headers();
 		headers.append('Content-Type', 'application/json');
 		headers.append('Authorization', localStorage.getItem('token'));
@@ -27,21 +27,20 @@ export class MaterialProvider {
 	
 	newMaterial(newMat){
 		return new Promise((resolve, reject) => {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-		headers.append('Authorization', localStorage.getItem('token'));
-        this.http.post(apiUrl, JSON.stringify(newMat), {headers: headers}) 
-          .subscribe(res => {
-            resolve(res.json());
-          }, (err) => {
-            reject(err);
-          });
-    });
+		let headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+			headers.append('Authorization', localStorage.getItem('token'));
+		this.http.post(apiUrl, JSON.stringify(newMat), {headers: headers}) 
+		  .subscribe(res => {
+		    resolve(res.json());
+		  }, (err) => {
+		    reject(err);
+		  });
+	    });
 	} 
   
-  
 	updateMaterial(id, mat){	 
-	 var headers = new Headers();
+		var headers = new Headers();
 		headers.append('Authorization', localStorage.getItem('token'));
 		headers.append('Content-Type', 'application/json');
 		console.log(JSON.stringify(mat));
@@ -50,11 +49,6 @@ export class MaterialProvider {
 			.map(res => res.json())
 			.subscribe(
 				err => console.log(err)
-			);
-			
-			
-  }
-	
-	}
-
-
+			);			
+	 }
+}
