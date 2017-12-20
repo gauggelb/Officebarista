@@ -5,8 +5,6 @@ import 'rxjs/add/operator/map';
 
 let apiUrl = 'https://iot-hackathon.herokuapp.com/orders';
 
-
-
 @Injectable()
 export class OrdersProvider {
 
