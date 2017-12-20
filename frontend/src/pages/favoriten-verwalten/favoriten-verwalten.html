@@ -10,19 +10,24 @@
 
     <br><br><br><br><br><p></p><br><br>
     <div id="favoritenVerwalten-container2">
-      <form (submit)="action()">
+	    
+	<!--setting the typescript function to be called when the submit button is pressed-->
+      	<form (submit)="action()">
 	  
 	  <ion-list>
 		<ion-item>
-		  <ion-label>Kaffeesorte</ion-label>
-		  <ion-select (ionChange) = "setFill()" [(ngModel)]="favoritProperties.description" name="description">
-			<ion-option [selected]="'Capuccino' === favoritProperties.description">Capuccino</ion-option>
-			<ion-option [selected]="'Espresso' === favoritProperties.description">Espresso</ion-option>
-			<ion-option [selected]="'Espresso Macchiato' === favoritProperties.description">Espresso Macchiato</ion-option>
-			<ion-option [selected]="'Kaffee' === favoritProperties.description">Kaffee</ion-option>
-			<ion-option  [selected]="'Latte Macchiato' === favoritProperties.description">Latte Macchiato</ion-option>
-			<ion-option [selected]="'Milchkaffee' === favoritProperties.description">Milchkaffee</ion-option>
-		  </ion-select>
+		  	<ion-label>Kaffeesorte</ion-label>
+			<!--On change event call the typescript's function "setFill" -->
+			 <ion-select (ionChange) = "setFill()" [(ngModel)]="favoritProperties.description" name="description">
+				 <!--"'Capuccino' === favoritProperties.description" means if there is a description from typescript and 
+					the value is capuccino,	then set capuccino as the selected option-->
+				<ion-option [selected]="'Capuccino' === favoritProperties.description">Capuccino</ion-option>
+				<ion-option [selected]="'Espresso' === favoritProperties.description">Espresso</ion-option>
+				<ion-option [selected]="'Espresso Macchiato' === favoritProperties.description">Espresso Macchiato</ion-option>
+				<ion-option [selected]="'Kaffee' === favoritProperties.description">Kaffee</ion-option>
+				<ion-option  [selected]="'Latte Macchiato' === favoritProperties.description">Latte Macchiato</ion-option>
+				<ion-option [selected]="'Milchkaffee' === favoritProperties.description">Milchkaffee</ion-option>
+			  </ion-select>
 		</ion-item>
 			
         <ion-item>
