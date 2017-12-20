@@ -1,3 +1,5 @@
+/*Is called with the corresponding html file*/
+
 import { Component } from '@angular/core';
 import { NavController, LoadingController} from 'ionic-angular';
 import {MaterialProvider} from '../../providers/material/material'
@@ -16,17 +18,19 @@ export class LagerVerwaltenPage {
 			this.allMaterials();
    }
 	
-  
+  /*Call the material's service and take all materials*/
   allMaterials(){
 	  this.materials = this.materialService.allMaterials()
 	  .subscribe(data => {this.materials = data; });
   }
 
+/*Call the material's service and take just the material with id matId*/
 showMaterial(matId){
 	localStorage.setItem('materialId',matId);
 	 this.navCtrl.push(MaterialAnzeigenPage);
   }
-  
+	
+  /*Call the NewMaterialPage to add new material*/
   newMaterial(){
 	localStorage.removeItem('materialId');
 	this.navCtrl.push(NewMaterialPage);
