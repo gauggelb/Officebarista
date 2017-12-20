@@ -1,3 +1,5 @@
+/*Is called with the corresponding html file*/
+
 import { Component } from '@angular/core';
 import { NavController, LoadingController} from 'ionic-angular';
 import {MaterialProvider} from '../../providers/material/material'
@@ -15,7 +17,8 @@ export class NewMaterialPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewMaterialPage');
   }
-  
+	
+ /*Create a newmaterial throught the material's service*/	 
   newMaterial(){
 	 this.materialService.newMaterial(this.material);
 			 localStorage.removeItem('New');
