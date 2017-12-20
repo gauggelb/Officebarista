@@ -1,3 +1,5 @@
+/*Is called with the corresponding html file*/
+
 import { Component } from '@angular/core';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { OrdersProvider } from '../../providers/orders/orders';
@@ -15,6 +17,7 @@ export class KaffeeBestellenPage {
 	notBlocked = false;
 	rechnung = false;
 	listToLoad :any;
+	/*Depending on the choosen coffee type, the fillamount options have to be changed. Therefore they have to be declared*/
 	espressoList=['35', '40', '45', '50', '55', '60'];
 	espressoMacchiatoList=['50','60','70','80'];
 	coffeeList=['60','80','100','120','140','160','180','200','220','240','260'];
@@ -31,7 +34,8 @@ export class KaffeeBestellenPage {
 	this.listToLoad = this.espressoList;
 	this.offeneRechnung();
   }
-  
+	
+  /*check if the user is blocked or not to adapdt the view*/
   offeneRechnung(){
 		this.blocked = localStorage.getItem('blocked');
 		console.log("this blocked"  + this.blocked);
@@ -41,7 +45,7 @@ export class KaffeeBestellenPage {
 			this.notBlocked =true;
 		}
 	}
-	
+  /*adapt the option to the choosen coffee type*/	
   setFill(){
   console.log("Here");
 	if(this.createProperties.description == "Capuccino"){
@@ -68,7 +72,7 @@ export class KaffeeBestellenPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad KaffeeBestellenPage');
   }
-  
+    /*Call the service from provider to order coffee*/	
     createOrder() {
     this.showLoader();
     this.orderService.createOrder(this.createProperties).then((result) => {
