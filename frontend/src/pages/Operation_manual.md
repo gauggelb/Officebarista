@@ -31,12 +31,6 @@ If the user is blocked, he can still still save his preferences but not order.
 
 ![fav_locked](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/fav_locked.png)
 
-# Nfc
-
-The App was supposed to send and read NFC-tags, but as the project does not implement this function anymore the app 
-still have a function of readng the NFC-tags (from card or anyother NFC-device). THis function could be useful if the project continues.
-
-![nfc](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/nfc.png)
 
 # Material management: Only for admins
  - All materials
@@ -68,5 +62,14 @@ still have a function of readng the NFC-tags (from card or anyother NFC-device).
 
  
  # Logout
+ 
  Once the user is done with the app he can just log out.
+ 
  ![logout](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/logout.png)
+ 
+# Nfc
+
+The App was supposed to send and read NFC-tags, but as the project does not implement this function anymore the app 
+still have a function of readng the NFC-tags (from card or anyother NFC-device). THis function could be useful if the project continues.
+
+![nfc](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/nfc.png)
