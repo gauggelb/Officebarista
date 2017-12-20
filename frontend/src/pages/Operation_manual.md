@@ -6,12 +6,12 @@ Every registered user can login by entering email and password.
 # Order coffee
 
 Once logged in every user can order a coffee by choosing the coffee's type, beanamount and fillamount.
-![order](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/kaffee_bestellen.png)
+![kaffee_bestellen](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/kaffee_bestellen.png)
 
 # Show bill
 
 The ordered coffees can then be showned on this tab, which will calculate the total billamount. 
-![bill](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/rechnung.png)
+![rechnung](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/rechnung.png)
 
 If a user has animpressive unpaid bill, any admin could decide to block him so that he can't order anymore and
 unlock him when he pais his due.
