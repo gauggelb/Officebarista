@@ -8,12 +8,12 @@ The Time of Flight Sensor is used to measure the distance and to find out if a c
 If a user wants to order a coffee directly at the coffee machine and can not order via Google Home or the app, then he have to hold his RFID card to the reader in order to let a coffee out of the coffee machine.
 
 ## Basestation
-The basestation is working with a Raspberry Pi zero W mounted on Raspbian. 
+The basestation is working with a Raspberry Pi zero W mounted on Raspbian.
 
 ### Used Components:
 
  - Raspberry PI Zero W
- - Jumper Wire 
+ - Jumper Wire
  - SD-Card with 8GB Space
  - MFRC522-RFID Sensor
  - Vl53l0X Time of Flight Sensor
@@ -28,7 +28,7 @@ The basestation is working with a Raspberry Pi zero W mounted on Raspbian.
 ```
 sudo apt-get update && sudo apt-get dist-upgrade -y
 ```
-5.  [Installing Vl53l0X API](https://github.com/cassou/VL53L0X_rasp "Installing VL53l0X")
+5. [Installing Vl53l0X API](https://github.com/cassou/VL53L0X_rasp "Installing VL53l0X")
 6. [Installing MFRC-522-RFID Reader](https://tutorials-raspberrypi.de/raspberry-pi-rfid-rc522-tueroeffner-nfc "Installing MFRC-522-RFID Reader")
 7. Copying the Scripts to the Home Folder
 8. Install npm and  nodejs
@@ -44,14 +44,14 @@ npm install pm2@latest -g
 
 
 ### Case Basestation
-![Basestation Case_1](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Kaffeecase%20rund%201.png)
+![](README/ob_case_01.png)
 
 ## Time of Flight sensor (VL53l0X)
 The Time of FLight Sensor is a laser-based sensor that reliably measures distances between 20mm and 2000mm.
 The ToF is positioned below the display so as to detect the bottom of a cup that is below the spout.
 
 ### Case VL53L0X Time of Flight sensor
-![ToF Case_1](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Case%20ToF%204.png)
+![](README/case_tof_04.png)
 
 
 ## 3D Modelling

@@ -5,10 +5,10 @@ During the Wintersemester 2017/2018 at the Reutlingen University we developed a 
 
 The idea behind the development is to offer a coffee order from the workplace. Therefore, the user has three options:
 Either he uses the developed app, the RFID card, or he orders via Google Home, which must be centrally located in the office.
-Should he order via Google Home, user identification and billing will be done via the language. If he orders via the app, 
+Should he order via Google Home, user identification and billing will be done via the language. If he orders via the app,
 the identification is done via the stored password. In the third case, he can order coffee as usual with his RFID card directly on the device.
 In both cases I can access all the standard coffees of the "Siemens TI909701HC EQ.9 connect s900 coffee machine". The forwarding of the commands takes place via IFTTT.
-Since the consumption of milk and coffee beans is recorded and tracked, an automatic reordering of consumables is provided. The collection takes place via Wunderlist 
+Since the consumption of milk and coffee beans is recorded and tracked, an automatic reordering of consumables is provided. The collection takes place via Wunderlist
 and the final order is processed via Amazon.
 
 ## Architecture diagram
@@ -20,7 +20,7 @@ The TOF sensor is used to detect if a cup is under the coffee maker and if it is
 With the RFID module can be authenticated via smartphone or RFID tag to ensure a legitimate coffee withdrawal
 The status LED shows if the entry was successful.
 
-A Tof sensor (Vl53L0X) has been selected to detect if a cup is under the coffee maker and to detect if the cup is 
+A Tof sensor (Vl53L0X) has been selected to detect if a cup is under the coffee maker and to detect if the cup is
 full or empty. For the secure placement of the technical components, a 3D housing was specially modeled and printed for this purpose.
 
 **Components:**
@@ -41,4 +41,4 @@ full or empty. For the secure placement of the technical components, a 3D housin
 
 
 
-![Architecture diagram](https://github.com/gauggelb/Officebarista/blob/master/hardware/images/Architektur%20Diagramm.png)
+![Architecture diagram](README/architecture_diagram.png)

@@ -18,32 +18,29 @@ The GUI is the intermediate between the user and the backend.  It allows specifi
 -	register a new user
 -	add and modify materials
 -	add and modify users (including blocking users)
-  
-  
+
+
  # Normal user’s view                                  
 
-![user](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/user.png)                
+![user](README/user.png)                
                                                                                                             
 # Admin’s view  
 
-![admin](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/admin.png)                                  
+![admin](README/admin.png)                                  
 
 # App-Views
-Every app-view is a page including three types of files:  html, typescript and css. 
- 
+Every app-view is a page including three types of files:  html, typescript and css.
+
 The Html document contains the elements (fields, labels, …) and values which will be outputted
-The Typescript document can implement page’s functions, send variables to the html and call provider’s functions 
+The Typescript document can implement page’s functions, send variables to the html and call provider’s functions
 The css document is responsible of the style which will be applied to the html
 
-                                      
-![pages](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/pages.png)     
+
+![pages](README/pages.png)     
 
 # Providers
-Providers are services, which use http calls within functions in order to transport data from the pages to the backend and from the backend to the pages. 
+Providers are services, which use http calls within functions in order to transport data from the pages to the backend and from the backend to the pages.
 
 You can find all the pages of this project [hier](https://github.com/gauggelb/Officebarista/tree/master/frontend/src/pages).
-                                      
-![providers](https://github.com/gauggelb/Officebarista/blob/master/frontend/README/providers.png)         
 
-
-
+![providers](README/providers.png)         
