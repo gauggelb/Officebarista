@@ -2,6 +2,15 @@
 During the Wintersemester 2017/2018 at the Reutlingen University we developed a MVP to order Coffee and manage the accounting via Google Home from the Siemens EQ.9 coffee machine.
 
 
+# Index
+* [Backend Overwiev](https://github.com/gauggelb/Officebarista/tree/master/backend
+ "Backend Overwiev")
+ * [Frontend Overwiev](https://github.com/gauggelb/Officebarista/tree/master/frontend
+ "Frontend Overwiev")
+ * [Hardware Overwiev](https://github.com/gauggelb/Officebarista/tree/master/hardware
+ "Hardware Overwiev")
+
+
 
 The idea behind the development is to offer a coffee order from the workplace. Therefore, the user has three options:
 Either he uses the developed app, the RFID card, or he orders via Google Home, which must be centrally located in the office.
@@ -25,7 +34,7 @@ full or empty. For the secure placement of the technical components, a 3D housin
 
 **Components:**
 
-* [Time of Flight (TOF) Sensor Vl53L0X](https://www.amazon.de/gp/product/B06XT1H1L7/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B06XT1H1L7&linkId=a4c61988dde5a204874bb208ab6c2cb5
+* [Time of Flight (TOF) Sensor Vl53L0X](https://www.amazon.de/Adafruit-Entfernungssensor-VL6180X-Flight-Sensor/dp/B01N9OOSQE/ref=pd_sbs_60_6?_encoding=UTF8&psc=1&refRID=AQ18450P2VPF9M0GNW5W
  "Time of Flight (TOF) Sensor Vl53L0X")
 
 * [Raspberry Pi Zero W](https://www.amazon.de/gp/product/B06XCYGP27/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B06XCYGP27&linkId=f8232bfc1cb044212710ab896692e510
