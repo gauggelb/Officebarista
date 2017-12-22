@@ -1,14 +1,14 @@
-# Officebarista
-The Hardware for this project is based on a Raspberry Pi Zero W with a MFRC522 RFID-Reader and the VL53L0X Time of Flight sensor. The scripts are realized in python and the Case is designed in Fusion 360.
+# Office Barista Hardware
+The main components to implement the hardware features for this project are a Raspberry Pi Zero W with a MFRC522 RFID-Reader and the VL53L0X Time of Flight sensor. The scripts are realized in python and the case is designed in Autodesk Fusion 360.
 
-## Layout from the Hardware settings
+## Hardware Circuit
 ![](README/hardware_layout.png)
 
-The Time of Flight Sensor is used to measure the distance and to find out if a cup is under the coffee machine and if it is full.
-If a user wants to order a coffee directly at the coffee machine and can not order via Google Home or the app, then he have to hold his RFID card to the reader in order to let a coffee out of the coffee machine.
+The Time of Flight sensor is used to find out if a coffee mug is placed under the coffee machine and if it is full or empty.
+If a user wants to order a coffee directly at the coffee machine and can not order via Google Home or the Office Barista app, then he has to register himself with his company RFID card in order to begin the brewing process.
 
 ## Basestation
-The basestation is working with a Raspberry Pi zero W mounted on Raspbian.
+The basestation is built with the Raspberry Pi Zero W with basic Raspbian installed.
 
 ### Used Components:
 
@@ -22,51 +22,52 @@ The basestation is working with a Raspberry Pi zero W mounted on Raspbian.
 ### Installation Raspberry PI
 
 1. Download Raspbian ([Raspbian download](https://www.raspberrypi.org/downloads/ "Download Raspbian"))
-2.  Flash the Raspbian to SD-Card (Note: bevor removing the SD-Card please make Step 3)
-3. Connecting the Raspberry PI to Wifi ([Raspberry PI Wifi Setup](https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html "Raspberry PI Wifi Setup"))
-4. Update & Upgrade the Raspbian
+2. Flash the Raspbian image to an SD-Card (Note: before removing the SD-Card, go to step 3 first)
+3. Connecting the Raspberry Pi to Wifi ([Raspberry PI Wifi Setup](https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html "Raspberry PI Wifi Setup"))
+4. Update & Upgrade OS
 ```
 sudo apt-get update && sudo apt-get dist-upgrade -y
 ```
 5. [Installing Vl53l0X API](https://github.com/cassou/VL53L0X_rasp "Installing VL53l0X")
 6. [Installing MFRC-522-RFID Reader](https://tutorials-raspberrypi.de/raspberry-pi-rfid-rc522-tueroeffner-nfc "Installing MFRC-522-RFID Reader")
-7. Copying the Scripts to the Home Folder
-8. Install npm and  nodejs
+7. Copy the scripts to the home folder
+8. Install nodejs and npm
 ```
 sudo apt-get install nodejs npm
 ```
-9.  install PM2 to Autostart the Script after rebooting
+9.  Install PM2 for autostart and execution management
 ```
 npm install pm2@latest -g
 
 ```
-10. Description how to use PM2 can find [here](http://pm2.keymetrics.io/docs/usage/quick-start/#application-declaration "Installing PM2")
+10. Detailed instructions on how to use PM2 can be found [here](http://pm2.keymetrics.io/docs/usage/quick-start/#application-declaration "Installing PM2")
 
 
 ### Case Basestation
 ![](README/ob_case_01.png)
 
 ## Time of Flight sensor (VL53l0X)
-The Time of FLight Sensor is a laser-based sensor that reliably measures distances between 20mm and 2000mm.
+The Time of Flight sensor is a laser-based sensor that reliably measures distances between 20mm and 2000mm.
 The ToF is positioned below the display so as to detect the bottom of a cup that is below the spout.
 
 ### Case VL53L0X Time of Flight sensor
 ![](README/case_tof_04.png)
 
 
-## 3D Modelling
-To model the Cases we used Fusion 360. The Cases can be printed with every 3D-Printer by using the 3D Models:
+## 3D Modeling
+To model the Cases we used Autodesk Fusion 360. The cases can be printed with every 3D-Printer by using the provided 3D models:
 
 ### Cases included:
  - ToF Case
  - BaseStation Case
 
+# Office Barista Hardware Scripts
 
 ## OfficeBarista.py
 
-this is a manual to write the OfficeBarista python script.
+Let's go into detail, on how the main python script for the hardware was developed.
 
-First you must do all necessary imports
+First import all necessary packages:
 
 ```
 import time
@@ -76,15 +77,16 @@ import VL53L0X
 import urlib2
 import datetime
 ```
-the import for VL53L0X is necessary for the TOF sensor. How you get this import is quite difficult. How you get this import to run, you will find out on this [GitHub](https://github.com/cassou/VL53L0X_rasp)
-The script sends only the data of the TOF and a timestep via HTTP call to the backend.
-For this you must deposit the URL.
+The VL53L0X package is necessary for the TOF sensor. Getting this specific package to work, does take some additional steps I'm not going to describe here. You can find out more about the installation process in this Git repo [VL53L0X Raspberry Pi Git](https://github.com/cassou/VL53L0X_rasp).
+
+The main thing this script does is sending the measurements from the ToF together with the current timestamp to the cloud application.
+Therefore the url for the sensordata endpoint is saved in a dedicated variable.
 
 ```
 url= 'https://iot-hackathon.herokuapp.com/sensordata'
 
 ```
-After that the next thing you must do is make the VL53L0X work.
+The next code block is all it takes to get the VL53L0X to work. We are initializing the sensor first and then reading the measurements in specified intervalls.
 
 ```
 tof = VL53L0X.VL53L0X()
@@ -98,9 +100,9 @@ print ("Timing %d ms" % (timing/1000))
 
 ```
 
-For quality testing we print the distance. This step can be left out.
+Printing out the timing is implemented for debugging purposes only. This is not needed for the production deployment.
 
-Now we´ve got the current distance and send it with a current timestamp to the backend.
+The following block is executed continuously for the complete runtime of the script. A distance measurement is read, by executing the `.get_distance()` method. Afterwards the data is sent to the cloud server via http request.
 
 ```
 if __name__ == '__main__':
@@ -116,30 +118,26 @@ if __name__ == '__main__':
 			req.add_header('Content-Type', 'application/json')
 			response = urllib2.urlopen(req, json.dumps(payload))
 			print('gesendet')
-			
-			
-                
+
+
+
 			time.sleep(1)
- 
+
         # Beim Abbruch durch STRG+C resetten
 	except KeyboardInterrupt:
 		print("Messung vom User gestoppt")
 		GPIO.cleanup()
 
 ```
-
-Abstand equals the current distance and millis is the current timestamp.
-With payload we define the data which will be posted to the URL.
-After we definition we send the data.
-
-Than the hole process goes to sleep for 1 second and repeat itself.
+The sleep call ensures, that a measurement is sent every second.
 
 
-###OfficeBarista_RFID.py
+### OfficeBarista_RFID.py
 
-this is a manual to write the OfficeBarista_RFID pyhton script. 
+The python script for the implementation of the RFID features is described in the following section.
 
-First you have to do all necessary imports
+First import all necessary packages again:
+
 ```
 import RPi.GPIO as GPIO
 import time
@@ -150,19 +148,19 @@ import json
 import time
 import urllib2
 ```
-the import for MFRC522 is neccessary for the RFID reader. How you get this import to run, you will find out on this [Tutorial](https://tutorials-raspberrypi.de/raspberry-pi-rfid-rc522-tueroeffner-nfc/)
-The script sends only the data of the RFID and send it to the Backend 
+getting the MFRC522 package to work is described in this [Tutorial](https://tutorials-raspberrypi.de/raspberry-pi-rfid-rc522-tueroeffner-nfc/).
+Whenever a RFID card is detected the script sends the identified id to the sensordata endpoint of the API server.
 
 ```
 url= 'https://iot-hackathon.herokuapp.com/sensordata'
 
 ```
 
-After that the next thing you have to is make the RFID work.
+The following block is initialize to setup the RFID reader:
 ```
 #GPIO Modus (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
- 
+
 #RFID Scanner deklariren
 MIFAREReader = MFRC522.MFRC522()
 
@@ -173,12 +171,13 @@ url = 'https://iot-hackathon.herokuapp.com/sensordata'
 #GPIO Pins zuweisen
 GPIO_TRIGGER = 17
 GPIO_ECHO = 27
- 
+
 #Richtung der GPIO-Pins festlegen (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
 ```
 
+Next we identify if a RFID tag is on the reader in a continuous loop
 ```
 if __name__ == '__main__':
 
@@ -196,8 +195,8 @@ if __name__ == '__main__':
             	response = urllib2.urlopen(req, json.dumps(payload2))
             	time.sleep(3)
  ```
-We read if there is a RFID tack on the reader, if so we will get the RFID code and print it.
 
+extract the UID of the RFID tag
 ```
 (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
 			if status == MIFAREReader.MI_OK:
@@ -206,7 +205,8 @@ We read if there is a RFID tack on the reader, if so we will get the RFID code a
            		a=str(uid[0])+' '+str(uid[1])+' '+str(uid[2])+' '+str(uid[3])+' '+str(uid[4])
            		print(a)
 ```
-After that we will load the code in the payload an send it to the backend
+
+and send it to the cloud via http.
 ```
 	payload2 ={'rfid' :a}
             	req = urllib2.Request(url)
@@ -215,4 +215,4 @@ After that we will load the code in the payload an send it to the backend
             	time.sleep(3)
  ```
 
-Than the hole process goes to sleep for 3 second and repeat it self. 
+The reading process restarts every 3 seconds.

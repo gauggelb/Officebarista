@@ -1,14 +1,14 @@
-# Officebarista general description
-During the Wintersemester 2017/2018 at the Reutlingen University we developed a MVP to order Coffee and manage the accounting via Google Home from the Siemens EQ.9 coffee machine.
+# Office Barista general description
+During the winter semester 2017/2018 at the Reutlingen University we developed a MVP to order Coffee and manage the accounting via Google Home from the Siemens EQ.9 coffee machine.
 
 
 # Index
-* [Backend Overwiev](https://github.com/gauggelb/Officebarista/tree/master/backend
- "Backend Overwiev")
- * [Frontend Overwiev](https://github.com/gauggelb/Officebarista/tree/master/frontend
- "Frontend Overwiev")
- * [Hardware Overwiev](https://github.com/gauggelb/Officebarista/tree/master/hardware
- "Hardware Overwiev")
+* [Backend Overview](https://github.com/gauggelb/Officebarista/tree/master/backend
+ "Backend Overview")
+ * [Frontend Overview](https://github.com/gauggelb/Officebarista/tree/master/frontend
+ "Frontend Overview")
+ * [Hardware Overview](https://github.com/gauggelb/Officebarista/tree/master/hardware
+ "Hardware Overview")
 
 
 
