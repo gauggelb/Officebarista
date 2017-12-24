@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 # Officebarista general description
-The course in the execution of a two-day hackathon should produce, in the context of "Internet of Things", a possibility 
-to order coffee from the workplace, over Google Home (speech recognition), as well as the detection of the 
-levels of various consumables produce. The challenge was to build an IoT solution from this starting position that 
-could capture this data from the coffee machine and use Google Home to add value to the end user.
-=======
+The course in the execution of a two-day hackathon should produce, in the context of "Internet of Things", a possibility to order coffee from the workplace, over Google Home (speech recognition), as well as the detection of the levels of various consumables produce. The challenge was to build an IoT solution from this starting position that could capture this data from the coffee machine and use Google Home to add value to the end user.
+
+
+
 # Office Barista general description
 During the winter semester 2017/2018 at the Reutlingen University we developed a MVP to order Coffee and manage the accounting via Google Home from the Siemens EQ.9 coffee machine.
 
->>>>>>> 3a4900b78e8c2309563380e508b1ff122bb60401
 
 # Index
 * [Backend Overview](https://github.com/gauggelb/Officebarista/tree/master/backend
