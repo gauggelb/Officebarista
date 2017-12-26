@@ -1,6 +1,6 @@
 # Office Barista Project Description
 The goal of the elective course 'IoT Hackathon: From business concept to implementation' at Reutlingen University was to develop the MVP for an IoT product during a two-day hackathon.
-Office Barista is the business idea of the winter semester 2017/18 course ([contributors](#creating-jobs)). Our solution provides an innovative approach to the coffee ordering process in modern offices. The service not only offers automated monthly billing for the coffee consumption of different users and therefore abandons annoying check lists, but also enables the automated reordering of coffee beans and milk. Additionally a connected coffee machine, Google Home and self-developed hardware is used to facilitate coffee ordering directly from the workplace through voice and the Office Barista app.
+Office Barista is the business idea of the winter semester 2017/18 course ([contributors](#contributors-and-responsibilities)). Our solution provides an innovative approach to the coffee ordering process in modern offices. The service not only offers automated monthly billing for the coffee consumption of different users and therefore abandons annoying check lists, but also enables the automated reordering of coffee beans and milk. Additionally a connected coffee machine, Google Home and self-developed hardware is used to facilitate coffee ordering directly from the workplace through voice and the Office Barista app.
 
 ## MVP
 After brainstorming, the team agreed on the following requirements in order to provide a minimal viable product:
