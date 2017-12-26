@@ -1,72 +1,40 @@
-# Officebarista general description
-The course in the execution of a two-day hackathon should produce, in the context of "Internet of Things", a possibility to order coffee from the workplace, over Google Home (speech recognition), as well as the detection of the levels of various consumables produce. The challenge was to build an IoT solution from this starting position that could capture this data from the coffee machine and use Google Home to add value to the end user.
-
-
-
-# Office Barista general description
-During the winter semester 2017/2018 at the Reutlingen University we developed a MVP to order Coffee and manage the accounting via Google Home from the Siemens EQ.9 coffee machine.
-
-
-# Index
-* [Backend Overview](https://github.com/gauggelb/Officebarista/tree/master/backend
- "Backend Overview")
- * [Frontend Overview](https://github.com/gauggelb/Officebarista/tree/master/frontend
- "Frontend Overview")
- * [Hardware Overview](https://github.com/gauggelb/Officebarista/tree/master/hardware
- "Hardware Overview")
-
- 
-## Architecture diagram
-
-![Architecture diagram](README/architecture_diagram.png)
-
-
-497/5000
-The "Siemens TI909701HC EQ.9 connect s900 coffee machine" is connected to a Raspberry Pi. 
-A coffee order is possible over a voice input over Google Home, the use of the app, or over an ordinary manual order.
-Above the nozzle hangs a time of flight sensor, which measures whether, first, a cup is placed and second, 
-whether the cup is empty, or full. On the Raspberry Pi, a Python script receives the measurements from the ToF and sends them to the backend.
-The device API is receiving the data from the sensor. The data is stored in a NoSQL data store.
-In addition, the levels of the coffee beans and the milk are queried over Node JS. If one of the 
-two reaches a pre-determined level, a reorder will automatically be triggered over Amazon.
-
+# Office Barista Project Description
+The goal of the elective course 'IoT Hackathon: From business concept to implementation' at Reutlingen University was to develop the MVP for an IoT product during a two-day hackathon.
+Office Barista is the business idea of the winter semester 2017/18 course ([contributors](#creating-jobs)). Our solution provides an innovative approach to the coffee ordering process in modern offices. The service not only offers automated monthly billing for the coffee consumption of different users and therefore abandons annoying check lists, but also enables the automated reordering of coffee beans and milk. Additionally a connected coffee machine, Google Home and self-developed hardware is used to facilitate coffee ordering directly from the workplace through voice and the Office Barista app.
 
 ## MVP
-After a brainstorming, the team agreed to the following requirements in order to provide a minimal overble product:
+After brainstorming, the team agreed on the following requirements in order to provide a minimal viable product:
 For the coffee order, the user has three options:
-Either he uses the developed app, the RFID card or ordered over Google Home, which must be centrally located in the office.
+Either he uses the developed app, his RFID card or orders through Google Home, which has to be centrally located in the office.
 
-	* If ordering through Google Home, user identification and billing is done through the speech recognition.
-	* If ordering over the app, the identification is done using the saved password.
-	* In the third case, the user can order a coffee as usual with his RFID card directly on the device.
+* If ordering through Google Home, user identification and billing is done through Googles integrated voice recognition.
+* If ordering over the app, the user is identified by logging into his unique user account.
+* In the third case, the user can order a coffee with his RFID card directly at the coffee machine, he is then identified by the UID of his card that is associated with his Office Barista user account.
 
-In both "remote cases" the user can access all standard coffees of the "Siemens TI909701HC EQ.9 connect s900 coffee machine".
+In the first two cases, the user has access to all standard coffee types, the 'Siemens TI909701HC EQ.9 connect s900 coffee machine' provides.
 
-As the consumption of milk and coffee beans is recorded and tracked, automatic reordering of consumables is provided. 
-The collection takes place over Wunderlist and the final order is processed over Amazon.
+With every coffee order the consumption of milk and coffee beans is tracked. If the stock of an item falls below a defined critical value (defined by an admin), the reordering process is triggered.
+Therefore either a shopping list is created on [Wunderlist](http://wunderlist.com), or automated reordering over Amazon is placed.
 
+## Architecture diagram
+![Architecture diagram](README/architecture_diagram.png)
 
-**Components:**
+The 'Siemens TI909701HC EQ.9 connect s900 coffee machine' is connected to a Raspberry Pi.
+Ordering a coffee is possible via voice input over Google Home, the use of the Office Barista app, or through a manual order at the device.
+A time of flight sensor is placed above the nozzle, that detects weather a mug is placed below the machine and it's filling level. On the Raspberry Pi, Python is used to read the sensor values and send them to the Office Barista cloud application.
+The device API is receiving the data from the sensor. The data is stored in a NoSQL data store.
 
-* [Time of Flight (TOF) Sensor Vl53L0X](https://www.amazon.de/Adafruit-Entfernungssensor-VL6180X-Flight-Sensor/dp/B01N9OOSQE/ref=pd_sbs_60_6?_encoding=UTF8&psc=1&refRID=AQ18450P2VPF9M0GNW5W
- "Time of Flight (TOF) Sensor Vl53L0X")
+## Components
+* [Backend Overview](https://github.com/gauggelb/Officebarista/tree/master/backend
+ "Backend Overview")
+* [Frontend Overview](https://github.com/gauggelb/Officebarista/tree/master/frontend
+ "Frontend Overview")
+* [Hardware Overview](https://github.com/gauggelb/Officebarista/tree/master/hardware
+ "Hardware Overview")
 
-* [Raspberry Pi Zero W](https://www.amazon.de/gp/product/B06XCYGP27/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B06XCYGP27&linkId=f8232bfc1cb044212710ab896692e510
- "Raspberry Pi Zero W")
-
-* [RFID Modul MCFR522](https://www.amazon.de/gp/product/B00QFDRPZY/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B00QFDRPZY&linkId=2a0ebd829ebf6630c376d83f4d594433
- "RFID Modul MCFR522")
-
-* [SMD RGB LED B0157AK0MU](https://www.amazon.de/gp/product/B0157AK0MU/ref=as_li_tl?ie=UTF8&tag=stapptory04-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B0157AK0MU&linkId=bd003decf6ac0da40e9f52439a2b63d7
- "SMD RGB LED B0157AK0MU")
- 
-
-**Contributors (and Responsibilities):**
-
+## Contributors (and Responsibilities):
 * Max Kolb (Backend, Support for Hardware and Frontend, Documentation)
 * Aline Mbekuem (Frontend, Documentation)
 * Bastian Gauggel (Hardware/ Sensor,  Python Script, Documentation)
 * Mathias Zimmermann (Hardware/ Sensor, Python Script, Documentation)
 * Timm Roth (Support for Hardware/ Sensor and Frontend, general Support, Documentation)
-
-
